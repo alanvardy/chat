@@ -1,3 +1,13 @@
 /* This file is for your main application css. */
-
 @import "./phoenix.css";
+
+@import "../../deps/phoenix_live_view/assets/css/live_view.css";
+
+.text-entry {
+    background: grey;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+}
