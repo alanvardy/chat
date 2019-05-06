@@ -3,10 +3,12 @@ defmodule ChatWeb.ChatLive do
   alias ChatWeb.ChatView
   alias Chat.Messages
 
-  def mount(_session, socket) do
+  def mount(session, socket) do
     Messages.subscribe()
+    new_socket = socket
+    |> assign(name: session.name)
 
-    {:ok, fetch(socket)}
+    {:ok, fetch(new_socket)}
   end
 
   def handle_info({Messages, [:message | _], _}, socket) do

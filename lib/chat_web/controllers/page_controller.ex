@@ -4,9 +4,9 @@ defmodule ChatWeb.PageController do
   alias Chat.Messages
   alias Chat.Messages.Message
 
-  def chat(conn, _params) do
+  def chat(conn, %{"user" => %{"name" => name}}) do
     changeset = Messages.change_message(%Message{})
-    render(conn, "chat.html", changeset: changeset, name: "TEST")
+    render(conn, "chat.html", changeset: changeset, name: name)
   end
   def index(conn, _params) do
     render(conn, "index.html")
