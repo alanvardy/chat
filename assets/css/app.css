@@ -5,9 +5,30 @@
 
 .text-entry {
     background: grey;
-    height: 50px;
+    padding: 5px 10px 5px 10px;
     width: 100%;
     position: fixed;
     bottom: 20px;
     left: 0;
+}
+
+form {
+    display: flex;
+    margin: 0;
+}
+
+row {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+input, button {
+    margin: 0px 5px 0px 5px;
+}
+
+#message_name, #message_content {
+    background-color: white;
 }
