@@ -53,6 +53,7 @@ defmodule Chat.Messages do
     %Message{}
     |> Message.changeset(attrs)
     |> Repo.insert()
+    |> broadcast_change([:message, :created])
   end
 
   @doc """
@@ -71,6 +72,7 @@ defmodule Chat.Messages do
     message
     |> Message.changeset(attrs)
     |> Repo.update()
+    |> broadcast_change([:message, :updated])
   end
 
   @doc """
@@ -86,7 +88,9 @@ defmodule Chat.Messages do
 
   """
   def delete_message(%Message{} = message) do
-    Repo.delete(message)
+    message
+    |> Repo.delete()
+    |> broadcast_change([:message, :deleted])
   end
 
   @doc """
@@ -100,5 +104,17 @@ defmodule Chat.Messages do
   """
   def change_message(%Message{} = message) do
     Message.changeset(message, %{})
+  end
+
+  @topic inspect(__MODULE__)
+
+  def subscribe do
+    Phoenix.PubSub.subscribe(Chat.PubSub, @topic)
+  end
+
+  defp broadcast_change({:ok, result}, event) do
+    Phoenix.PubSub.broadcast(Chat.PubSub, @topic, {__MODULE__, event, result})
+
+    {:ok, result}
   end
 end

@@ -1,0 +1,3 @@
+<div class="todo-box">
+  <%= live_render(@conn, ChatWeb.ChatLive, session: %{name: @name}) %>
+</div>

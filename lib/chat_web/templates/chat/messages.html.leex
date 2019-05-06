@@ -1,0 +1,16 @@
+<div class="messagebox">
+<%= inspect(@name) %>
+  <%= for message <- @messages do %>
+  <p>
+    <strong><%= message.name %>:</strong> <%= message.content %>
+  </p>
+  <% end %>
+</div>
+<div class="text-entry">
+  <form action="#" phx-submit="add" class="row">
+    <%= hidden_input :message, :name, value: @name %>
+    <%= text_input :message, :content, placeholder: "Message", class: "column column-50" %>
+    <%= submit "Send", phx_disable_with: "Sending...", class: "button", class: "column" %>
+  </form>
+
+</div>

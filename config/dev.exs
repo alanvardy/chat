@@ -20,6 +20,11 @@ config :chat, ChatWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  live_reload: [
+    patterns: [
+      ~r{lib/live_view_counter_web/live/.*(ex)$}
+    ]
+  ],
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js",
