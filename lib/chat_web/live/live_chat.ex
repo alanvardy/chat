@@ -26,6 +26,8 @@ defmodule ChatWeb.ChatLive do
   end
 
   defp fetch(socket) do
-    assign(socket, messages: Messages.list_messages())
+    messages = Messages.list_messages()
+    |> Enum.reverse()
+    assign(socket, messages: messages)
   end
 end

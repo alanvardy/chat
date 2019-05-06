@@ -1,34 +1,47 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
-
 @import "../../deps/phoenix_live_view/assets/css/live_view.css";
 
 .text-entry {
     background: grey;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 0px 10px;
     width: 100%;
     position: fixed;
     bottom: 20px;
     left: 0;
 }
 
+.messagebox {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 70vh;
+    display: flex;
+    flex-direction: column-reverse
+}
+
+.livecontainer {
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+}
+
 form {
     display: flex;
     margin: 0;
+    padding: 0;
 }
 
-row {
+row, p {
     margin: 0;
 }
 
-p {
-    margin: 0;
-}
-
-input, button {
+input,
+button {
     margin: 0px 5px 0px 5px;
 }
 
-#message_name, #message_content {
+#message_content {
     background-color: white;
 }
