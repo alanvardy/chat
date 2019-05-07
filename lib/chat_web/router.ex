@@ -21,6 +21,8 @@ defmodule ChatWeb.Router do
     get "/", PageController, :index
     get "/chat", PageController, :chat
     get "/erase", PageController, :erase
+
+    resources("/messages", MessageController)
   end
 
   # Other scopes may use custom stacks.
