@@ -11,4 +11,12 @@ defmodule ChatWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def erase(conn, _params) do
+    Messages.delete_all()
+
+    conn
+    |> put_flash(:info, "Deleted all messages.")
+    |> render("index.html")
+  end
 end

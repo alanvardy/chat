@@ -2,31 +2,32 @@
 @import "./phoenix.css";
 @import "../../deps/phoenix_live_view/assets/css/live_view.css";
 
+header {
+    width: 100%;
+    background: #fdfdfd;
+    border-bottom: 1px solid #eaeaea;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
 .text-entry {
+    padding-top: 5px;
     background: grey;
-    padding: 10px 10px 0px 10px;
+    height: 50px;
     width: 100%;
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 0;
 }
 
 .messagebox {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 70vh;
+    height: calc(100vh - 110px);
     display: flex;
     flex-direction: column-reverse
 }
-
-.livecontainer {
-    height: 100%;
-}
-
-body {
-    height: 100vh;
-}
-
 form {
     display: flex;
     margin: 0;

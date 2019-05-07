@@ -1,6 +1,6 @@
-<%= link "Join chat", to: Routes.page_path(@conn, :chat, name: "Alan") %>
-
-<form action="/chat" class="row">
-  <%= text_input :user, :name, placeholder: "Name", class: "column column-50" %>
-  <%= submit "Join", phx_disable_with: "Joining...", class: "button", class: "column" %>
+<form action="/chat">
+  <%= text_input :user, :name, placeholder: "Name" %>
+  <%= submit "Join", phx_disable_with: "Joining...", class: "button" %>
 </form>
+
+<%= link "Erase it all!", to: Routes.page_path(@conn, :erase) %>

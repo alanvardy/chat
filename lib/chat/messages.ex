@@ -93,6 +93,13 @@ defmodule Chat.Messages do
     |> broadcast_change([:message, :deleted])
   end
 
+  def delete_all() do
+    Message
+    |> Repo.delete_all()
+
+    broadcast_change({:ok, "Everything got deleted"}, [:message, :deleted])
+  end
+
   @doc """
   Returns an `%Ecto.Changeset{}` for tracking message changes.
 
