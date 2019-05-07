@@ -17,7 +17,7 @@ config :chat, ChatWeb.Endpoint,
   render_errors: [view: ChatWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Chat.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [
-    signing_salt: "`mix phx.gen.secret`"
+    signing_salt: "7HekGYwxATz33gM/rH9q2mV+uKJq5/Hu"
   ]
 
 # Configures Elixir's Logger
