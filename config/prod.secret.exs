@@ -16,7 +16,6 @@ database_url =
     """
 
 config :chat, Chat.Repo,
-adapter: Ecto.Adapters.Postgres,
 username: "postgres",
 password: "postgres",
 database: "chatdb",
