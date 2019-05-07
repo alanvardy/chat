@@ -13,9 +13,11 @@ database_url =
     """
 
 config :chat, Chat.Repo,
-  # ssl: true,
-  url: database_url,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
+username: "postgres",
+password: "postgres",
+database: "tododb",
+url: database_url,
+pool_size: 15
 
 secret_key_base =
   System.get_env("SECRET_KEY_BASE") ||
@@ -25,5 +27,4 @@ secret_key_base =
     """
 
 config :chat, ChatWeb.Endpoint,
-  http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
-  secret_key_base: secret_key_base
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
