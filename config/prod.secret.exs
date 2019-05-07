@@ -15,7 +15,7 @@ database_url =
 config :chat, Chat.Repo,
 username: "postgres",
 password: "postgres",
-database: "tododb",
+database: "chatdb",
 url: database_url,
 pool_size: 15
 
