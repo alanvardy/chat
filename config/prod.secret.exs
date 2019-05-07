@@ -5,6 +5,9 @@
 # file to your .gitignore.
 use Mix.Config
 
+config :chat, ChatWeb.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
 database_url =
   System.get_env("DATABASE_URL") ||
     raise """
@@ -18,13 +21,3 @@ password: "postgres",
 database: "chatdb",
 url: database_url,
 pool_size: 15
-
-secret_key_base =
-  System.get_env("SECRET_KEY_BASE") ||
-    raise """
-    environment variable SECRET_KEY_BASE is missing.
-    You can generate one by calling: mix phx.gen.secret
-    """
-
-config :chat, ChatWeb.Endpoint,
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
