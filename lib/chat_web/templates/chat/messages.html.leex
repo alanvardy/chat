@@ -2,7 +2,9 @@
   <div class="messagebox">
     <%= for message <- @messages do %>
     <p>
-      <strong><%= message.name %>:</strong> <%= message.content %>
+      <small><%= nice_date(message.inserted_at) %></small>
+      <strong><%= message.name %>:</strong>
+      <%= message.content %>
     </p>
     <% end %>
   </div>
