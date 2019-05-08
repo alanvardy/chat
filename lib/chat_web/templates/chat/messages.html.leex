@@ -11,9 +11,8 @@
   <div class="text-entry">
     <form action="#" phx-submit="add">
       <%= hidden_input :message, :name, value: @name %>
-      <%= text_input :message, :content, placeholder: "Message" %>
+      <%= text_input :message, :content, placeholder: "Message", autofocus: true %>
       <%= submit "Send", phx_disable_with: "Sending...", class: "button" %>
     </form>
-
   </div>
 </div>
