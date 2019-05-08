@@ -2,5 +2,3 @@
   <%= text_input :user, :name, placeholder: "Name" %>
   <%= submit "Join", phx_disable_with: "Joining...", class: "button" %>
 </form>
-
-<%= link "Erase it all!", to: Routes.page_path(@conn, :erase) %>
